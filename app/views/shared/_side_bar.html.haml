@@ -1,21 +1,22 @@
-.side-bar
-  .side-header
-    .side-header__box
-      %p.top-items__name
-        = current_user.name
-      %ul.side-header__box__lists
-        %li.side-header__box__edit
-          = link_to new_group_path do
-            = icon('fas', 'edit', class: 'icon')
-        %li.side-header__box__cog
-          = link_to edit_user_path(current_user) do
-            =icon('fas', 'cog', class: 'icon') 
-  .groups
-    - current_user.groups.each do |group|
-      = link_to "#", class:"group" do
-        .group
-          .group__name
-            = group.name
-          .group__message
-            新着メッセージ
+.wrapper
+  .side-bar
+    .side-header
+      .side-header__box
+        %p.top-items__name
+          = current_user.name
+        %ul.side-header__box__lists
+          %li.side-header__box__edit
+            = link_to new_group_path do
+              = icon('fas', 'edit', class: 'icon')
+          %li.side-header__box__cog
+            = link_to edit_user_path(current_user) do
+              =icon('fas', 'cog', class: 'icon') 
+    .groups
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group.id), class:"group" do
+          .group
+            .group__name
+              = group.name
+            .group__message
+              = group.show_last_message
        
