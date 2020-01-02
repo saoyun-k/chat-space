@@ -1,70 +1,24 @@
-.chat-main
-  .main-header
-    .main-header__left
-      %p.main-header__left__group-info
-        yunyun
-      %ul.main-header__left__member-lists
-        Member : 
-        %li.main-header__left__member-list
-          ゆん
-    = link_to "#" do
-      .main-header__edit-btn
-        Edit
-  .main-messages
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-    .main-message
-      .main-message__chat-list
-        %p.main-message__chat-list__entrant
-          ゆん
-        %p.main-message__chat-list__date
-          2019/12/12(Thu)20:35:22
-      %p.main-message__text
-        こんばんは!!
-  .main-form
-    %form.chat-main__message-form
-      .input-box
-        %input.input-box__text{placeholder: "type a message", type: "text"}/
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file"}
-    %input.submit-btn{type: "submit", value: "Send"}
-          
+.wrapper
+  .chat-main
+    .main-header
+      .main-header__left
+        %p.main-header__left__group-info
+          = @group.name
+        %ul.main-header__left__member-lists
+          Menber :
+          = @group.name
+          %li.main-header__left__member-list
+            ゆん
+      = link_to "Edit", edit_group_path(@group.id), class: 'main-header__edit-btn'
+    .message
+      .messages
+        = render @messages
+    .main-form
+      = form_for [@group, @message] do |f|
+        .chat-main__message-form
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'input'
+          = f.submit 'Send', class: 'submit-btn'
