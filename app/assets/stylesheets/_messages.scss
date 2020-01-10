@@ -104,6 +104,7 @@ $blue: #38aef0;
       .main-message {
         padding-bottom: 46px;
         &__chat-list {
+          padding-top: 35px;
           margin-bottom: 16px;
             &__entrant {
               font-weight: bold;
@@ -113,14 +114,15 @@ $blue: #38aef0;
                 padding-left: 10px;
                 font-size: 11px;
                 color: #999999;
+                list-style: none;
               }
-            }   
+            }
             &__content-text {
               margin-top: 10px;
               font-size: 14px;
               color: #434a54;
-            }  
-        }
+            }
+         }
       }
     }
       .main-form {
@@ -153,7 +155,6 @@ $blue: #38aef0;
                 input {
                   display: none;
                 }
-              
               }
           }
           .submit-btn {
