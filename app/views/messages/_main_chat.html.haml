@@ -5,10 +5,8 @@
         %p.main-header__left__group-info
           = @group.name
         %ul.main-header__left__member-lists
-          Menber :
-          = @group.name
-          %li.main-header__left__member-list
-            ゆん
+          - @group.users.each do |user|
+            = user.name
       = link_to "Edit", edit_group_path(@group.id), class: 'main-header__edit-btn'
     .message
       .messages
