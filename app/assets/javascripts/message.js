@@ -77,7 +77,6 @@ $("#new_message").on("submit", function(e){
         $('.messages').append(insertHTML);
         $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
         $("#new_message")[0].reset();
-        // $(".form__submit").prop("disabled", false);
       }
     })
     .fail(function() {
