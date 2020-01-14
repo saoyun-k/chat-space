@@ -76,15 +76,12 @@ $("#new_message").on("submit", function(e){
         });
         $('.messages').append(insertHTML);
         $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
-        $("#new_message")[0].reset();
       }
     })
     .fail(function() {
       alert('自動更新に失敗しました');
     })
-    .always(function(data){
-      $('.submit-btn').prop('disabled', false);
-    })
+    $('.submit-btn').prop('disabled', false);
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
