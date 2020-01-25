@@ -5,6 +5,10 @@ $blue: #38aef0;
   justify-content: space-between;
 }
 
+*{
+  box-sizing: border-box;
+
+
 .wrapper {
   display: flex;
   .side-bar {
@@ -39,7 +43,7 @@ $blue: #38aef0;
       height: calc(100vh - 100px);
       padding: 20px;
       background-color: #2f3e51;
-      box-sizing: border-box;
+
       overflow: scroll;
       .group {
         margin-bottom: 40px;
@@ -99,7 +103,7 @@ $blue: #38aef0;
       height: calc(100vh - 190px);
       padding: 35px 40px;
       background-color:#fafafa;
-      box-sizing: border-box;
+
       overflow: scroll;
       .main-message {
         &__chat-list {
@@ -129,7 +133,7 @@ $blue: #38aef0;
         width: calc(100vw - 300px);
         padding: 20px 40px;
         background-color: #d2d2d2;
-        box-sizing: border-box;
+
         @include jc-sb;
         .chat-main__message-form {
           height: 50px;
@@ -144,24 +148,25 @@ $blue: #38aef0;
               width: 100%;
               padding: 0 40px 0 10px;
               border-style: none;
-              box-sizing: border-box;
+            
             }
-              &__image {
-                font-size: 1.5rem;
-                position: absolute;
-                top: 10px;
-                left: 96%;
-                input {
-                  display: none;
-                }
+            &__image {
+              font-size: 1.3rem;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              cursor: pointer;
+              input {
+                display: none;
               }
+            }
           }
           .submit-btn {
             width: 100px;
             margin-left: 15px;
             color: $white;
             background-color: $blue;
-            box-sizing: border-box;
+          
           }
         }
       }
@@ -170,3 +175,4 @@ $blue: #38aef0;
   }
   
  }
+}
